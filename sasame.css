@@ -23,37 +23,110 @@ a {
     text-decoration: none;
 }
 
-.howtotakepictures-content {
-    padding: 3rem 1rem;
-    text-align: center;
+.personality-content {
+    padding: 4rem 2rem;
 }
 
-.howtotakepictures-content p {
+.personality-intro p {
+    text-align: center;
     margin: 0 auto 3rem 0;
-}
-
-.point-situation {
-    text-align: center;
-}
-
-.point-situation-each-header {
-    font-weight: 700;
-    font-size: 1.2rem;
-}
-
-.point-situation p {
-    margin: 1rem auto 3rem auto;
-}
-
-.trip-content {
-    padding: 0 4rem;
-    max-width: 100%;
-    color: #fff;
-    display: flex;
     font-family: 'Shippori Mincho', serif;
 }
 
-.trip-content:nth-child(2n+1) {
+.howtotakepictures-content {
+    padding: 4rem 2rem;
+    max-width: 864px;
+    width: 100%;
+    margin: 0 auto;
+    /* text-align: center; */
+}
+
+.howtotakepictures-intro p {
+    text-align: center;
+    margin: 0 auto 1rem 0;
+}
+
+.three-tips-header {
+    font-weight: bold;
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1.2rem;
+}
+
+.three-tips {
+    border: 2px dotted #FEC488;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    margin: 1rem 2rem;
+    font-weight: bold;
+}
+
+.three-tips li {
+    margin: 1rem 0 1rem 1rem;
+    list-style: decimal;
+}
+
+.howtotakepictures-intro-2 p {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+
+.howtotakepictures-content h3 {
+    position: relative;
+    padding-left: 1.5em;
+    line-height: 1.4;
+    color: black;
+    margin: 3rem auto 1rem auto;
+}
+
+.howtotakepictures-content h3:before {
+    content: "●";
+    font-weight: 900;
+    position: absolute;
+    font-size: 1.4em;
+    left: 0;
+    top: -0.2em;
+    color: #BAC4EE;
+}
+
+.point-tips p {
+    margin: 1rem;
+}
+
+.point-tips p span,
+.point-situation p span {
+    color: #FF8100;
+    font-weight: bold;
+}
+
+.point-situation h4 {
+    font-weight: 700;
+    font-size: 1.2rem;
+    background: linear-gradient(transparent 70%, #FEDB88 70%);
+    padding: 0 1rem 0 0;
+    margin: 1rem 1rem;
+    width: fit-content;
+}
+
+.point-situation p {
+    margin: 1rem 1rem 3rem 1rem;
+}
+
+.trip-content {
+    max-width: 100%;
+    color: #fff;
+    font-family: 'Shippori Mincho', serif;
+}
+
+.trip-content-inner {
+    padding: 0 4rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.trip-content:nth-child(2n+1) .trip-content-inner {
     flex-direction: row-reverse;
 }
 
@@ -102,6 +175,7 @@ a {
 
 .slider {
     width: 100%;
+    max-width: 1024px;
     -webkit-mask-image: linear-gradient(90deg, rgb(255, 255, 255, 0) 0%, rgba(255, 255, 255) 5%, rgba(255, 255, 255) 95%, rgba(255, 255, 255, 0) 100%);
     mask-image: linear-gradient(90deg, rgb(255, 255, 255, 0) 0%, rgba(255, 255, 255) 5%, rgba(255, 255, 255) 95%, rgba(255, 255, 255, 0) 100%);
 }

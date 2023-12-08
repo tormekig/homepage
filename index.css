@@ -241,6 +241,7 @@ a {
 
 #sasame-content {
     display: flex;
+    width: 100%;
     min-height: 100vh;
     background-color: #FAFAFA;
 }
@@ -257,14 +258,12 @@ a {
 }
 
 .intro-photo {
-    position: absolute;
-    right: 0;
     width: 50%;
-    height: 100%;
 }
 
 .intro-photo-inner {
-    height: 100%;
+    width: 100%;
+    min-height: 100vh;
     position: relative;
     overflow: hidden;
 }
@@ -281,9 +280,15 @@ a {
 .intro-profile {
     width: 50%;
     padding: 3rem;
+    display: flex;
+    align-items: center;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 864px) {
+    #sasame-content {
+        display: block;
+    }
+
     .intro-photo,
     .intro-profile {
         width: 100%;
@@ -370,7 +375,7 @@ a {
     margin: 0;
     width: 100%;
     height: 64vh;
-    background-image: url(img/unpublish/221029.jpg);
+    background-image: url(img/221029.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
