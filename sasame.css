@@ -33,6 +33,19 @@ a {
     font-family: 'Shippori Mincho', serif;
 }
 
+#sasame-table-head {
+    width: fit-content;
+    color: #7E8FD7;
+    text-align: center;
+    padding: 0.25em 1rem;
+    margin: 1rem auto;
+    font-weight: bold;
+    border-top: solid 2px #7e8ed7bb;
+    border-bottom: solid 2px #7e8ed7bb;
+    background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+    background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+}
+
 .howtotakepictures-content {
     padding: 4rem 2rem;
     max-width: 864px;
@@ -70,7 +83,6 @@ a {
     text-align: center;
     margin: 3rem 0;
 }
-
 
 .howtotakepictures-content h3 {
     position: relative;
@@ -171,6 +183,21 @@ a {
 
 .trip-main-img-container {
     width: 100%;
+}
+
+@media screen and (max-width: 864px) {
+    .trip-content-inner {
+        display: block;
+        padding: 0 1rem;
+    }
+
+    .trip-header {
+        margin: 0 auto;
+    }
+
+    .trip-main {
+        padding: 1rem;
+    }
 }
 
 .slider {
