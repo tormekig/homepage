@@ -10,6 +10,12 @@ body {
     letter-spacing: calc(33em / 1000);
 }
 
+@media screen and (max-width: 864px) {
+    body {
+        font-size: 14px;
+    }
+}
+
 * {
     box-sizing: border-box;
     word-wrap: break-word;
@@ -24,7 +30,11 @@ a {
 }
 
 .personality-content {
-    padding: 4rem 2rem;
+    padding: 2rem;
+}
+
+.personality-intro {
+    margin: 12rem auto 20rem auto;
 }
 
 .personality-intro p {
@@ -38,12 +48,28 @@ a {
     color: #7E8FD7;
     text-align: center;
     padding: 0.25em 1rem;
-    margin: 1rem auto;
+    margin: 3rem auto;
     font-weight: bold;
     border-top: solid 2px #7e8ed7bb;
     border-bottom: solid 2px #7e8ed7bb;
-    background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
-    background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+    /* background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px);
+    background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px,#e9f4ff 3px, #e9f4ff 7px); */
+}
+
+.sasame-table-bottom {
+    font-size: 0.8rem;
+    margin: 4rem 0 12rem 0;
+    text-align: right;
+}
+
+@media screen and (max-width: 864px) {
+    .personality-content {
+        padding: 1rem;
+    }
+
+    .personality-intro {
+        margin: 12rem auto 20rem auto;
+    }
 }
 
 .howtotakepictures-content {
@@ -72,6 +98,10 @@ a {
     padding: 1rem 2rem;
     margin: 1rem 2rem;
     font-weight: bold;
+}
+
+.three-tips span {
+    color: #71BBD0;
 }
 
 .three-tips li {
@@ -112,6 +142,88 @@ a {
     font-weight: bold;
 }
 
+.point-img-container {
+    width: 100%;
+    margin: 1rem;
+}
+
+.point-img-header {
+    text-align: center;
+}
+
+.point-img-content {
+    width: auto;
+    max-width: 100%;
+    padding: 1rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.point-img-inner {
+    border: 2px solid #FFDB87;
+    padding: 1.5rem;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.point-img-bad,
+.point-img-good {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #fff;
+    transform: translate(-50%,-50%)
+}
+
+.point-img-bad::before, .point-img-bad::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 2rem;
+    background: #3C51A5;
+}
+
+.point-img-bad::before {
+    transform: translate(-2px, -50%) rotate(45deg);
+}
+
+.point-img-bad::after {
+    transform: translate(-2px, -50%) rotate(-45deg);
+}
+
+.point-img-good::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    background: none;
+    border: 4px solid #F35B43;
+    transform: translate(-50%, -50%)
+}
+
+.point-img-inner img {
+    display: block;
+    width: 192px;
+}
+
+.horizontal-img {
+    width: auto !important;
+    height: 192px;
+}
+
 .point-situation h4 {
     font-weight: 700;
     font-size: 1.2rem;
@@ -122,7 +234,43 @@ a {
 }
 
 .point-situation p {
-    margin: 1rem 1rem 3rem 1rem;
+    margin: 1rem;
+}
+
+.situation-img-container {
+    margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 864px) {
+    .howtotakepictures-content {
+        padding: 3rem 1rem;
+    }
+
+    .three-tips {
+        margin: 1rem 0;
+    }
+
+    .point-img-container {
+        width: auto;
+        height: auto;
+    }
+
+    .point-img-content {
+        flex-direction: column;
+    }
+
+    .point-img-inner {
+        flex-direction: column;
+    }
+
+    .point-img-inner img {
+        display: block;
+        width: 100% !important;
+    }
+
+    .horizontal-img {
+        height: auto !important;
+    }
 }
 
 .trip-content {
@@ -216,25 +364,25 @@ a {
     margin: 0 10px;
 }
 
-.gallery li {
+.hover-img-container {
     overflow: hidden;
 }
 
-.gallery li a {
+.hover-img-container a {
     display: block;
     transition: all .3s;
     overflow: hidden;
 }
 
-.gallery li:hover a {
+.hover-img-container:hover a {
     transform: scale(0.96);
 }
 
-.gallery li:hover img {
+.hover-img-container:hover img {
     transform: scale(1.1);
 }
 
-.gallery li img {
+.hover-img-container img {
     transform: scale(1);
     transition: all .3s;
 }

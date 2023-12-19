@@ -264,6 +264,7 @@ a {
     vertical-align: top;
     text-align: right;
     border-right: #333 1px solid;
+    white-space: nowrap;
 }
 
 .profile-table th, td {
@@ -289,6 +290,16 @@ a {
 .headline-sub {
     font-size: 1rem;
     font-weight: bold;
+}
+
+@media screen and (max-width: 864px) {
+    .headline {
+        padding: 2rem;
+    }
+
+    .headline-main {
+        font-size: 3rem;
+    }
 }
 
 #sasame-content {
@@ -344,6 +355,10 @@ a {
     .intro-photo,
     .intro-profile {
         width: 100%;
+    }
+
+    .intro-profile {
+        padding: 3rem 0.8rem;
     }
 }
 
