@@ -33,6 +33,7 @@ a {
 
 #center-box {
     margin: 0 auto;
+    width: 100%;
     height: 80%;
     display: flex;
     align-items: center;
@@ -43,8 +44,8 @@ a {
 #top-img-back-rect {
     position: absolute;
     left: -64%;
-    width: 150vh;
-    height: 150vh;
+    width: 120vw;
+    height: 120vw;
     border-radius: 50%;
     background-color: #C2CCF5;
     z-index: -10;
@@ -60,6 +61,26 @@ a {
     transform: rotate(-3deg) scale(1);
     box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4);
     transition: all .5s;
+    opacity: 0;
+}
+
+.top-img-animation {
+    animation-name: imgRotate;
+    animation-duration: 1.5s;
+    animation-fill-mode: none;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes imgRotate{
+    from {
+        transform: rotate(-5deg) scale(1.2);
+        opacity: 0;
+    }
+
+    to {
+        transform: rotate(-3deg) scale(1);
+        opacity: 1;
+    }
 }
 
 #top-img-container:hover {
@@ -88,7 +109,7 @@ a {
     font-family: 'Barlow Condensed', sans-serif;
 }
 
-#top-name span {
+.top-name-blue {
     color: #A4AEE4;
 }
 
@@ -287,6 +308,7 @@ a {
     font-family: 'Dancing Script', cursive;
 }
 
+
 .headline-sub {
     font-size: 1rem;
     font-weight: bold;
@@ -340,6 +362,23 @@ a {
     object-fit: cover;
 }
 
+.intro-photo-inner-img-anination {
+    animation-name: imgZoom;
+    animation-duration: 10.0s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+@keyframes imgZoom{
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
 .intro-profile {
     width: 50%;
     padding: 3rem;
@@ -364,6 +403,7 @@ a {
 
 #gallery-container {
     padding: 0 2rem;
+    width: 100%;
     background-color: #C2CCF5;
 }
 
@@ -371,7 +411,8 @@ a {
     columns: 3;
     column-gap: 1rem;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 1200px;
     background-color: #FAFAFA;
 }
 
@@ -438,8 +479,9 @@ a {
     height: 64vh;
     background-image: url(img/221029.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-position: center;
+    background-attachment: fixed;
 }
 
 .dot-content-inner {
@@ -465,6 +507,25 @@ a {
     align-items: center;
     background-color: rgba(0,0,0,.6);
     padding: 4rem;
+}
+
+.dot-content-content-animation {
+    animation-name: scaleIn;
+    animation-duration: 1.0s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+}
+
+@keyframes scaleIn{
+    from {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1.0);
+        opacity: 1;
+    }
 }
 
 .dot-content-content-a-outer {
@@ -651,4 +712,195 @@ a {
     width: 100%;
     margin: 0 auto;
     padding: 2rem 4rem;
+}
+
+/* animation */
+.fadeDown{
+    animation-name: fadeDownAnime;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    opacity: 0;
+}
+    
+@keyframes fadeDownAnime{
+    from {
+        opacity: 0;
+        transform: translateY(-5rem);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fadeLeft{
+    animation-name: fadeLeftAnime;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    opacity: 0;
+}
+    
+@keyframes fadeLeftAnime{
+    from {
+        opacity: 0;
+        transform: translateX(-5rem);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fadeRight{
+    animation-name: fadeRightAnime;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    opacity: 0;
+}
+    
+@keyframes fadeRightAnime{
+    from {
+        opacity: 0;
+        transform: translateX(5rem);
+    }
+    
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ---------------------- */
+/*タイトル視差*/
+
+.slide-in {
+	overflow: hidden;
+    display: inline-block;
+    padding: 0 10px;/*英語がはみ出るので見えるように余白追記*/
+}
+
+.slide-in_inner {
+	display: inline-block;
+
+}
+
+/*左右のアニメーション*/
+.leftAnime,
+.rightAnime{
+    opacity: 0;/*事前に透過0にして消しておく*/
+}
+
+.slideAnimeLeftRight {
+	animation-name: slideText-100;
+	animation-duration:0.8s;
+	animation-fill-mode:forwards;
+    opacity: 0;
+}
+
+@keyframes slideText-100 {
+    from {
+        transform: translateX(-100%); /*要素を左の枠外に移動*/
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);/*要素を元の位置に移動*/
+        opacity: 1;
+    }
+}
+
+.slideAnimeRightLeft {
+	animation-name: slideText100;
+	animation-duration:0.8s;
+	animation-fill-mode:forwards;
+    opacity: 0;
+}
+
+
+@keyframes slideText100 {
+    from {
+        transform: translateX(100%);/*要素を右の枠外に移動*/
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);/*要素を元の位置に移動*/
+        opacity: 1;
+    }
+}
+
+/* ---------------------- */
+/*背景色が伸びて出現（共通）*/
+.bgextend{
+    animation-name:bgextendAnimeBase;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    position: relative;
+    overflow: hidden;/*　はみ出た色要素を隠す　*/
+    opacity:0;
+}
+
+@keyframes bgextendAnimeBase{
+from {
+    opacity:0;
+}
+
+to {
+    opacity:1;  
+}
+}
+
+.bgappearTrigger {
+    opacity: 0;
+}
+
+.bgappear{
+    animation-name:bgextendAnimeSecond;
+    animation-duration:1s;
+    animation-delay: 0.6s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+}
+
+@keyframes bgextendAnimeSecond{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*左から*/
+.bgLRextend::before{
+    animation-name:bgLRextendAnime;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #666;/*伸びる背景色の設定*/
+}
+@keyframes bgLRextendAnime{
+    0% {
+        transform-origin:left;
+        transform:scaleX(0);
+    }
+    50% {
+        transform-origin:left;
+        transform:scaleX(1);
+    }
+    50.001% {
+        transform-origin:right;
+    }
+    100% {
+        transform-origin:right;
+        transform:scaleX(0);
+    }
 }

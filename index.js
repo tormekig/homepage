@@ -4,22 +4,59 @@ lightbox.option({
     'albumLabel': ' %1 / %2',
 })
 
-function fadeAnime(){
-    $('#gallery li').each(function() {
+function scrollAnimeTrigger(elem, offset, className) {
 
-        const elemPos = $(this).offset().top;
-        const scroll = $(window).scrollTop();
-        const windowHeight = $(window).height();
+    $(elem).each(function() {
+        var elemPos = $(this).offset().top - offset;
+        var scroll = $(window).scrollTop();
+        var windowHeight = $(window).height();
 
         if (scroll >= elemPos - windowHeight){
-            $(this).addClass('flipLeft');
+            $(this).addClass(className);
         } else {
-            $(this).removeClass('flipLeft');
+            $(this).removeClass(className);
         }
+    })
 
-    });
 }
 
 $(window).on('load scroll', function(){
-    fadeAnime();
+
+    scrollAnimeTrigger('.leftAnime', 0, 'slideAnimeLeftRight')
+    scrollAnimeTrigger('.rightAnime', 0, 'slideAnimeRightLeft')
+    scrollAnimeTrigger('.intro-photo-inner img', 0, 'intro-photo-inner-img-anination')
+    scrollAnimeTrigger('#gallery li', 0, 'flipLeft')
+    scrollAnimeTrigger('.dot-content-content', 0, 'dot-content-content-animation')
+
+});
+
+function getScroll(elem, isTop = false) {
+
+    var scroll = $(window).scrollTop() - elem.offset().top
+    if (!isTop) scroll += elem.height();
+
+    return scroll;
+
+}
+
+$(window).scroll(function() {
+
+    var elem = $('.intro-photo-inner img')
+    var scroll = getScroll(elem, false)
+    elem.css({
+        // transform: 'scale(' + (100 + scroll/30)/100 + ')',
+    });
+
+    var elem = $('#profile-content')
+    var scroll = getScroll(elem, false)
+    elem.css({
+        transform: 'translateY(' + -(scroll/5)  + "px)",
+    });
+
+
+    var elem = $('.dot-content')
+    var scroll = getScroll(elem, false)
+    elem.css({
+        'background-position': "center " + scroll/10 + "px",//スクロール値を代入してtopの位置をマイナスにずらす
+    });
 });

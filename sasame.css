@@ -158,6 +158,7 @@ a {
     margin: 0 auto;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 2rem;
 }
 
@@ -266,6 +267,7 @@ a {
     .point-img-inner img {
         display: block;
         width: 100% !important;
+        max-width: 256px;
     }
 
     .horizontal-img {
